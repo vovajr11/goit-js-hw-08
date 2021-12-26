@@ -7,6 +7,6 @@ var t=arguments[3],n="Expected a function",e=NaN,i="[object Symbol]",r=/^\s+|\s+
 },{}],"qhja":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;const e=(e,t)=>{try{const o=JSON.stringify(t);localStorage.setItem(e,o)}catch(r){console.error("Set state error: ",r.message)}},t=e=>{try{const r=localStorage.getItem(e);return null===r?void 0:JSON.parse(r)}catch(t){console.error("Get state error: ",t.message)}},r=e=>{return null===localStorage.getItem(e)?void 0:localStorage.removeItem(e)};var o={save:e,load:t,remove:r};exports.default=o;
 },{}],"iiAF":[function(require,module,exports) {
-"use strict";var e=t(require("@vimeo/player")),r=t(require("./storage"));function t(e){return e&&e.__esModule?e:{default:e}}const u=require("lodash.throttle"),o=document.querySelector("#vimeo-player"),a=new e.default(o),l="videoplayer-current-time";a.on("timeupdate",u(({seconds:e})=>{r.default.save(l,e)},1e3)),a.setCurrentTime(r.default.load(l));
+"use strict";var e=r(require("@vimeo/player")),t=r(require("./storage"));function r(e){return e&&e.__esModule?e:{default:e}}const u=require("lodash.throttle"),l=document.querySelector("#vimeo-player"),o=new e.default(l),a="videoplayer-current-time";o.on("timeupdate",u(({seconds:e})=>{t.default.save(a,e)},1e3)),null!==localStorage.getItem(a)&&o.setCurrentTime(t.default.load(a));
 },{"@vimeo/player":"zU8P","lodash.throttle":"FNyO","./storage":"qhja"}]},{},["iiAF"], null)
-//# sourceMappingURL=/goit-js-hw-08/02-video.720dbb21.js.map
+//# sourceMappingURL=/goit-js-hw-08/02-video.a1dc7ef6.js.map
