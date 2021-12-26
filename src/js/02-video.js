@@ -14,4 +14,6 @@ player.on(
   }, 1000),
 );
 
-player.setCurrentTime(storage.load(VIDEOPLAYER_KEY));
+if (localStorage.getItem(VIDEOPLAYER_KEY) !== null) {
+  player.setCurrentTime(storage.load(VIDEOPLAYER_KEY));
+}
